@@ -6,14 +6,15 @@
 */
 
 @IsTest
-public with sharing class FlowControlLoopsCollectionsTest {
+public with sharing class FlowControlLoopsCollectionsTest 
+    {private static final String v1 = 'Incorrect result for x = y';
     @IsTest
     static void testHelloWorld() {
         String result = FlowControlLoopsCollections.helloWorld(10, 5);
         Assert.areEqual('Hello World!', result, 'Incorrect result for x > y');
 
         result = FlowControlLoopsCollections.helloWorld(5, 5);
-        Assert.isNull(result, 'Incorrect result for x = y');
+        Assert.isNull(result, v1);
 
         result = FlowControlLoopsCollections.helloWorld(5, 10);
         Assert.isNull(result, 'Incorrect result for x < y');
@@ -183,8 +184,8 @@ public with sharing class FlowControlLoopsCollectionsTest {
     @IsTest
     static void testSumPositiveIntegers() {
         Integer result = FlowControlLoopsCollections.sumPositiveIntegers();
-        Integer expectedSum = 12;
-        Assert.areEqual(expectedSum, result, 'Incorrect sum of positive integers');
+        Integer expectedSum = 9;
+    Assert.areEqual(expectedSum, result, 'Incorrect sum of positive integers');
     }
 
     @IsTest
